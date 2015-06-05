@@ -56,7 +56,7 @@ namespace Sim01
 			return (float)Global.Rand.NextDouble()*magnitude*((Global.Rand.Next(0,2)==0)?1:-1);
 		}
 		
-		public void Update (float time)
+		public virtual void Update (float time)
 		{
 			counter5 += time;  
 			counter20 += time;

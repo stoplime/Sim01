@@ -43,6 +43,7 @@
     <Compile Include="GridPos.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="GroundRobot.cs" />
+    <Compile Include="Obsticle.cs" />
   </ItemGroup>
   <ItemGroup>
     <ShaderProgram Include="shaders\Simple.fcg" />

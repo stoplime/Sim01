@@ -1,13 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Sim01\AppMain.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Sim01\Obsticle.cs">
     <Files>
-      <File FileName="Sim01\AppMain.cs" Line="45" Column="4" />
+      <File FileName="Sim01\AppMain.cs" Line="73" Column="69" />
       <File FileName="Sim01\Sprite.cs" Line="210" Column="5" />
       <File FileName="Sim01\Background.cs" Line="34" Column="51" />
       <File FileName="Sim01\Global.cs" Line="15" Column="25" />
       <File FileName="Sim01\Player.cs" Line="20" Column="18" />
-      <File FileName="Sim01\GroundRobot.cs" Line="41" Column="55" />
+      <File FileName="Sim01\GroundRobot.cs" Line="59" Column="17" />
+      <File FileName="Sim01\Obsticle.cs" Line="6" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
