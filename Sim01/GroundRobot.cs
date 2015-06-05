@@ -9,19 +9,22 @@ namespace Sim01
 		private float direction;
 		private float speed;
 		private Sprite sprite;
-		private float counter;
+		private float counter5;
+		private float counter20;
 		private float diviation;
 		
 		public GroundRobot (Vector3 initPos, float dir)
 		{
 			pos = initPos;
 			direction = dir;
-			counter = 0;
+			counter5 = 0;
+			counter20 = 0;
 			
 			diviation = newDiviation(0.05f);// 3 degrees in rad
 			speed = 13.33f;	// pixels per second ~~ 0.33 m/s
 			
 			sprite = new Sprite(Global.Graphics,Global.Textures[2]);
+			sprite.Center = new Vector2(0.5f,0.5f);
 			sprite.Rotation = dir;
 			sprite.Position = initPos;
 		}
@@ -33,12 +36,18 @@ namespace Sim01
 		
 		public void Update (float time)
 		{
-			counter += time;
+			counter5 += time;  
+			counter20 += time;
 			pos += new Vector3(FMath.Cos(direction+diviation)*speed*time,FMath.Sin(direction+diviation)*speed*time,0);
 			
-			if (counter >= 5) {
-				counter -= 5;
+			if (counter5 >= 5) {
+				counter5 -= 5;
 				trajectoryNoise();
+			}
+			if (counter20 >= 20) {
+				counter20 -= 20;
+				trajectoryNoise();
+				direction += FMath.PI;
 			}
 			
 			sprite.Position = pos;

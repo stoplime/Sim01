@@ -39,10 +39,11 @@ namespace Sim01
 			initTextures();
 			
 			Global.Bg = new Background();
-			Global.GRobots = new GroundRobot[16];
 			
-			int GRnum = 16;
-			Vector3 center = new Vector3(Global.Graphics.Screen.Width/2,Global.Graphics.Screen.Height/2,0);
+			int GRnum = 10;
+			Global.GRobots = new GroundRobot[GRnum];
+			
+			Vector3 center = new Vector3(Global.Graphics.Screen.Width/2,400,0);
 			for (int i = 0; i < GRnum; i++) {
 				float angle = i*FMath.PI*2/GRnum;
 				Vector3 offset = new Vector3(FMath.Cos(angle),FMath.Sin(angle),0)*40;
