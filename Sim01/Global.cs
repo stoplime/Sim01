@@ -16,6 +16,8 @@ namespace Sim01
 		
 		public static Background Bg;
 		public static GroundRobot[] GRobots;
+		public static GroundRobot[] ORobots;
+		
 	}
 }
 

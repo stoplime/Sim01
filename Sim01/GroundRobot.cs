@@ -6,15 +6,15 @@ namespace Sim01
 	public class GroundRobot
 	{
 		private Vector3 pos;
-		private float direction;
-		private float speed;
-		private Sprite sprite;
+		protected float direction;
+		protected float speed;
+		protected Sprite sprite;
 		
 		private float counter5;
 		private float counter20;
 		private float counterRotate;
 		
-		private float diviation;
+		protected float diviation;
 		private float angularSpeed;
 		
 		public Vector3 Pos

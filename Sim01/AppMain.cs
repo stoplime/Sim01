@@ -49,6 +49,14 @@ namespace Sim01
 				Vector3 offset = new Vector3(FMath.Cos(angle),FMath.Sin(angle),0)*40;
 				Global.GRobots[i] = new GroundRobot(center+offset,angle);
 			}
+			
+			Global.ORobots = new Obsticle[4];
+			
+			for (int i = 0; i < 4; i++) {
+				float angle = i * FMath.PI/2;
+				Global.ORobots[i] = new Obsticle(center+new Vector3(40*5*FMath.Sin(angle),-40*5*FMath.Cos(angle),0), angle);
+			}
+			
 		}
 		
 		private static void initTextures ()
@@ -83,6 +91,9 @@ namespace Sim01
 				foreach (GroundRobot g in Global.GRobots) {
 					g.Update(time);
 				}
+				foreach (GroundRobot o in Global.ORobots) {
+					((Obsticle)o).Update(time);
+				}
 			}
 		}
 
@@ -96,6 +107,9 @@ namespace Sim01
 			
 			foreach (GroundRobot g in Global.GRobots) {
 				g.Render();
+			}
+			foreach (GroundRobot o in Global.ORobots) {
+				o.Render();
 			}
 			
 			// Present the screen
