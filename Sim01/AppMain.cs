@@ -66,6 +66,18 @@ namespace Sim01
 			
 			Global.Control.Update(gamePadData,time);
 			
+			//collisions
+			for (int i = 0; i < Global.GRobots.Length; i++) {
+				for (int j = 0; j < Global.GRobots.Length; j++) {
+					if (i!=j) {
+						if (Global.GRobots[i].Pos.Distance(Global.GRobots[j].Pos) <= 10) {
+							Global.GRobots[i].Collide = true;
+							Global.GRobots[j].Collide = true;
+						}
+					}
+				}
+			}
+			
 			if (Global.Control.Play) {
 				Global.Time += time;
 				foreach (GroundRobot g in Global.GRobots) {

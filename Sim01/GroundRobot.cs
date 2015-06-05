@@ -17,6 +17,20 @@ namespace Sim01
 		private float diviation;
 		private float angularSpeed;
 		
+		public Vector3 Pos
+		{
+			get{return pos;}
+			set{pos = value;}
+		}
+		
+		private bool preCollide;
+		private bool collide;
+		public bool Collide
+		{
+			get{return collide;}
+			set{collide = value;}
+		}
+		
 		public GroundRobot (Vector3 initPos, float dir)
 		{
 			pos = initPos;
@@ -24,6 +38,9 @@ namespace Sim01
 			angularSpeed = FMath.PI/2;//roughly 180 in 2 secs (in rads)
 			counter5 = 0;
 			counter20 = 0;
+			
+			collide = false;
+			preCollide = false;
 			
 			diviation = newDiviation(0.05f);// 3 degrees in rad
 			speed = 13.33f;	// pixels per second ~~ 0.33 m/s
@@ -61,6 +78,17 @@ namespace Sim01
 				trajectoryNoise();
 				direction += FMath.PI;
 				counterRotate += FMath.PI/angularSpeed;
+			}
+			
+			//handle collision
+			if (collide && !preCollide) {
+				trajectoryNoise();
+				direction += FMath.PI;
+				counterRotate += FMath.PI/angularSpeed;
+			}
+			preCollide = collide;
+			if (counterRotate <= 0) {
+				collide = false;
 			}
 			
 			sprite.Position = pos;
