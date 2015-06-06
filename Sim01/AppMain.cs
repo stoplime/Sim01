@@ -48,6 +48,7 @@ namespace Sim01
 				float angle = i*FMath.PI*2/GRnum;
 				Vector3 offset = new Vector3(FMath.Cos(angle),FMath.Sin(angle),0)*40;
 				Global.GRobots[i] = new GroundRobot(center+offset,angle);
+				Global.GRobots[i].ReColor((Global.Rand.Next(2)==0)?true:false);
 			}
 			
 			Global.ORobots = new Obsticle[4];
@@ -82,6 +83,15 @@ namespace Sim01
 							Global.GRobots[i].Collide = true;
 							Global.GRobots[j].Collide = true;
 						}
+					}
+				}
+			}
+			
+			for (int i = 0; i < Global.GRobots.Length; i++) {
+				for (int j = 0; j < Global.ORobots.Length; j++) {
+					if (Global.GRobots[i].Pos.Distance(Global.ORobots[j].Pos) <= 10) {
+						Global.GRobots[i].Collide = true;
+						Global.ORobots[j].Collide = true;
 					}
 				}
 			}

@@ -56,6 +56,16 @@ namespace Sim01
 			return (float)Global.Rand.NextDouble()*magnitude*((Global.Rand.Next(0,2)==0)?1:-1);
 		}
 		
+		public void ReColor (bool red)
+		{
+			if (red) {
+				sprite.SetColor(1,0,0,1);
+			}else{
+				sprite.SetColor(0,1,0,1);
+			}
+		}
+		
+		
 		public virtual void Update (float time)
 		{
 			counter5 += time;  
@@ -82,6 +92,7 @@ namespace Sim01
 			
 			//handle collision
 			if (collide && !preCollide) {
+				counter20 = 0;
 				trajectoryNoise();
 				direction += FMath.PI;
 				counterRotate += FMath.PI/angularSpeed;
