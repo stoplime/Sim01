@@ -14,6 +14,14 @@ namespace Sim01
 		private float counter20;
 		private float counterRotate;
 		
+		private float density;
+		public float Density
+		{
+			get{return density;}
+			set{density = value;}
+		}
+		private Text densityDisplay;
+		
 		protected float diviation;
 		private float angularSpeed;
 		
@@ -38,6 +46,7 @@ namespace Sim01
 			angularSpeed = FMath.PI/2;//roughly 180 in 2 secs (in rads)
 			counter5 = 0;
 			counter20 = 0;
+			density = 0;
 			
 			collide = false;
 			preCollide = false;
@@ -68,6 +77,7 @@ namespace Sim01
 		
 		public virtual void Update (float time)
 		{
+			density = 0;
 			counter5 += time;  
 			counter20 += time;
 			if (counterRotate > 0) {

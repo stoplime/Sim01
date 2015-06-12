@@ -77,11 +77,14 @@ namespace Sim01
 			
 			//collisions
 			for (int i = 0; i < Global.GRobots.Length; i++) {
-				for (int j = 0; j < Global.GRobots.Length; j++) {
+				for (int j = i; j < Global.GRobots.Length; j++) {
 					if (i!=j) {
-						if (Global.GRobots[i].Pos.Distance(Global.GRobots[j].Pos) <= 10) {
-							Global.GRobots[i].Collide = true;
-							Global.GRobots[j].Collide = true;
+						if (Global.GRobots[i].Pos.Distance(Global.GRobots[j].Pos) <= 80) {
+							Global.GRobots[i].Density++;
+							if (Global.GRobots[i].Pos.Distance(Global.GRobots[j].Pos) <= 10) {
+								Global.GRobots[i].Collide = true;
+								Global.GRobots[j].Collide = true;
+							}
 						}
 					}
 				}

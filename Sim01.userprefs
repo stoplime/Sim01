@@ -1,13 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Sim01\AppMain.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Sim01\GroundRobot.cs">
     <Files>
-      <File FileName="Sim01\AppMain.cs" Line="36" Column="31" />
+      <File FileName="Sim01\AppMain.cs" Line="85" Column="42" />
       <File FileName="Sim01\Sprite.cs" Line="210" Column="5" />
       <File FileName="Sim01\Background.cs" Line="34" Column="51" />
       <File FileName="Sim01\Global.cs" Line="19" Column="28" />
       <File FileName="Sim01\Player.cs" Line="20" Column="18" />
-      <File FileName="Sim01\GroundRobot.cs" Line="65" Column="5" />
+      <File FileName="Sim01\GroundRobot.cs" Line="91" Column="4" />
       <File FileName="Sim01\Obsticle.cs" Line="12" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
